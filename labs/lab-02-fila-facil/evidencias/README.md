@@ -83,3 +83,34 @@ output:
 verificacao:
     24 aprovados · 0 falhas · 24 testes
 
+
+## 5 - PASSO NOVAS FUNCIONALIDADES
+
+Funcionalidade 1: Contador Visual Separado no Painel
+Funcionalidade 2: Botão e Canal de Senha Prioritária (Idosos / Gestantes)
+
+prompt:
+    
+    `Preciso atualizar o labs/lab-02-fila-facil/src/fila.js para incluir suporte a fila prioritária, mas sem quebrar nada do que já tá funcionando (os 24 testes existentes precisam continuar passando).
+    O que precisa mudar:
+    emitirSenha(estado, categoria = 'comum'): se vier sem categoria ou como 'comum', mantém o comportamento padrão jogando em estado.aguardando. Se for 'prioritaria', joga em estado.prioritarias.
+    chamarProxima(estado): implementar a regra de alternância 2:1. Se tiver gente nas duas filas, atende no máximo 2 prioritárias seguidas e puxa 1 comum. Se só tiver uma das categorias na espera, atende ela direto. Toda vez que chamar uma comum (ou reiniciar), zera o contador de prioritárias consecutivas. Se não tiver ninguém pra chamar, continua retornando null.
+    reiniciarFila(estado): limpa também estado.prioritarias e reseta o contador de prioritárias consecutivas.
+    Por favor, não altere as assinaturas das funções nem mexa nos arquivos dentro de tests/`
+
+
+prompt:
+
+    `Agora vamos ajustar o visual em labs/lab-02-fila-facil/index.html e src/estilo.css para encaixar essa opção de prioritária:
+    No card de emissão (index.html), coloca um novo botão logo abaixo do que já existe com o id btn-emitir-prioritaria e texto "Retirar prioritária (Idosos / PCD)".
+    Na parte de "Na espera", inclui um contador separado pra sabermos quantas prioritárias e quantas comuns estão na fila (pode usar algo como <span id="contador-prioritarias">0 prioritárias</span>).
+    No estilo.css, dá um tapa visual nesse botão secundário e garante um :focus-visible bem nítido (outline/box-shadow) pra acessibilidade de teclado.
+    Mantém o layout base sem quebrar o que já tá estilizado`
+
+
+prompt:
+
+    `vamos amarrar tudo no labs/lab-02-fila-facil/src/app.js:
+    Adiciona o listener de clique no #btn-emitir-prioritaria chamando FilaFacil.emitirSenha(estado, 'prioritaria') e disparando o render da tela em seguida.
+    Na função de renderização, atualiza os novos spans/contadores pra refletir em tempo real a quantidade de comuns e prioritárias aguardando.
+    Não precisa mexer na confirmação de reinício e nem tocar na pasta tests/`
