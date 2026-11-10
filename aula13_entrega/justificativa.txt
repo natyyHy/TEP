@@ -1,0 +1,13 @@
+test_arredondamento (__main__.TestPedido.test_arredondamento) ... ok
+test_preserva_entrada (__main__.TestPedido.test_preserva_entrada) ... ok
+test_sem_vip (__main__.TestPedido.test_sem_vip) ... ok
+test_soma (__main__.TestPedido.test_soma) ... ok
+test_vazio (__main__.TestPedido.test_vazio) ... ok
+test_vip_abaixo (__main__.TestPedido.test_vip_abaixo) ... ok
+test_vip_acima (__main__.TestPedido.test_vip_acima) ... ok
+test_vip_no_limite (__main__.TestPedido.test_vip_no_limite) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.001s
+
+OK

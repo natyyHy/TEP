@@ -1,0 +1,5 @@
+O código original tinha nomes pouco claros (s, p), um laço manual para somar e três return em if/else
+ aninhados. A refatoração usa sum(precos) e o nome subtotal, junta as duas condições em um único if e 
+ dá nome ao limiar de 10000. O limiar continua inclusivo (>=) e o desconto continua inteiro 
+ (subtotal // 10), então 10009 ainda resulta em 9009. A lista não é modificada, porque sum só lê. 
+ A assinatura e o tipo de retorno (int) não mudaram.
